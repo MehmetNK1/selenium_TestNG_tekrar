@@ -2,6 +2,7 @@ package test.day17;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.HotelmycampPage;
@@ -25,11 +26,14 @@ public class Q1_pomPositiveTest {
         //test data username: manager
         hotelmycampPage.username.sendKeys("manager"+ Keys.ENTER);
 
-        //test data password : Manager 1
-        hotelmycampPage.password.sendKeys("Manager 1"+Keys.ENTER);
+        //test data password : Manager1!
+        hotelmycampPage.password.sendKeys("Manager1!");
 
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
         hotelmycampPage.loginGiris.click();
+        Actions actions= new Actions(Driver.getDriver());
+        actions.moveToElement(hotelmycampPage.girislogin).perform();
+        Assert.assertTrue(hotelmycampPage.logout.isDisplayed());
 
 
     }

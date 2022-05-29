@@ -10,15 +10,21 @@ public class HotelmycampPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath="//*[@href='/Account/Logon']")
+    @FindBy(xpath="(//*[@class='nav-link'])[7]")
     public WebElement Login;
 
     @FindBy (xpath = "//*[@class='form-control required']")
     public WebElement username;
 
-    @FindBy (xpath = "//*[@class='form-control required password']")
+    @FindBy (xpath = "//*[@class='form-control required password error']")
     public WebElement password;
 
     @FindBy (id = "btnSubmit" )
     public WebElement loginGiris;
+
+    @FindBy (xpath = "//*[@class='username username-hide-on-mobile']")
+    public WebElement girislogin;
+
+    @FindBy (xpath = "//*[@href='/Admin/Account/Logoff']")
+    public WebElement logout;
 }

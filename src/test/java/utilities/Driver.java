@@ -11,11 +11,13 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        if (driver==null)
+        if (driver==null) {
             WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        }
 
         return driver;
     }
