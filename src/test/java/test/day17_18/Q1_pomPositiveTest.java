@@ -1,6 +1,5 @@
-package test.day17;
+package test.day17_18;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -30,7 +29,7 @@ public class Q1_pomPositiveTest {
         hotelmycampPage.password.sendKeys("Manager1!");
 
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
-        hotelmycampPage.loginGiris.click();
+        hotelmycampPage.loginButonGiris.click();
         Actions actions= new Actions(Driver.getDriver());
         actions.moveToElement(hotelmycampPage.girislogin).perform();
         Assert.assertTrue(hotelmycampPage.logout.isDisplayed());

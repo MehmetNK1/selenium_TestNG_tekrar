@@ -20,11 +20,14 @@ public class HotelmycampPage {
     public WebElement password;
 
     @FindBy (id = "btnSubmit" )
-    public WebElement loginGiris;
+    public WebElement loginButonGiris;
 
     @FindBy (xpath = "//*[@class='username username-hide-on-mobile']")
     public WebElement girislogin;
 
     @FindBy (xpath = "//*[@href='/Admin/Account/Logoff']")
     public WebElement logout;
+
+    @FindBy (xpath = "//*[@class='divMessageError']")
+    public WebElement girilemediYazisi;
 }
